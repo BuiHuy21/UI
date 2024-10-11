@@ -25,7 +25,7 @@ body {
   object-fit: cover;
 }
 .header label,
-input {
+#toggle {
   display: none;
 }
 .header .wrapper-header .logo img {
@@ -140,13 +140,15 @@ input {
   padding-bottom: 48px;
 }
 .rooms .content-room {
-  padding: 0 40px;
+  width: 100%;
 }
 .rooms .content-room .list-room {
+  padding: 0 100px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
 .rooms .content-room .list-room .item-room {
   display: flex;
   align-items: center;
@@ -158,7 +160,8 @@ input {
   border-radius: 12px;
   margin-bottom: 16px;
   overflow: hidden;
-  height: 420px;
+  height: 520px;
+  width: 100%;
 }
 .rooms .content-room .list-room .item-room .img img {
   width: 100%;
@@ -178,11 +181,14 @@ input {
   font-weight: 600;
   color: #424242;
 }
+.rooms .content-room .mySwiper1 {
+  display: none;
+}
 
 .our-products {
   margin-top: 64px;
 }
-.our-products .container-main {
+.our-products .container {
   padding: 0 100px;
   width: 100%;
   margin: 0 auto;
@@ -199,6 +205,9 @@ input {
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   padding-bottom: 48px;
+}
+.our-products .mySwiper2 {
+  display: none;
 }
 .our-products .list-our-product .item-product {
   overflow: hidden;
@@ -353,7 +362,7 @@ input {
 }
 .slide-product .wrapper-slide .content-slide {
   flex: 4;
-  padding-left: 200px;
+  padding-left: 100px;
 }
 .slide-product .wrapper-slide .content-slide .title-slide {
   font-size: 50px;
@@ -479,40 +488,23 @@ input {
 .grid-img .title-grid-img {
   font-size: 42px;
   font-weight: 600;
+  padding-bottom: 28px;
 }
-.grid-img .grid-img-main {
-  display: flex;
+
+.grid-img-main {
+  display: grid;
+  grid-column-gap: 24px;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   overflow: hidden;
+  padding: 0 100px;
 }
-.grid-img .grid-img-main .item-block {
+.grid-img-main .bug2 {
   overflow: hidden;
-  display: flex;
-  gap: 10px;
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-}
-.grid-img .grid-img-main .item-block img {
-  width: 100%;
-  height: 100%;
-}
-.grid-img .grid-img-main .item-block img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.grid-img .grid-img-main .item-block .item-son img {
-  object-fit: cover;
-}
-.item-grandson {
-  display: flex;
-  gap: 10px;
-}
-.item-grandson img {
-  height: 220px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  row-gap: 24px;
+  padding-top: 24px;
 }
 
 .footer {
@@ -520,63 +512,63 @@ input {
   border-top: 2px solid #ddd;
   padding: 24px 0;
 }
-.footer .container-main {
+.footer .container {
   padding: 0 100px;
 }
-.footer .container-main .wrapper-footer {
+.footer .container .wrapper-footer {
   display: flex;
   gap: 60px;
 }
-.footer .container-main .wrapper-footer .info-company {
+.footer .container .wrapper-footer .info-company {
   flex: 2;
 }
-.footer .container-main .wrapper-footer .info-company .name-company {
+.footer .container .wrapper-footer .info-company .name-company {
   font-size: 50px;
   font-weight: 600;
   padding-bottom: 45px;
 }
-.footer .container-main .wrapper-footer .info-company .address {
+.footer .container .wrapper-footer .info-company .address {
   font-size: 20px;
   color: #9a9999;
 }
-.footer .container-main .wrapper-footer .info-company .sub-address {
+.footer .container .wrapper-footer .info-company .sub-address {
   font-size: 20px;
   color: #9a9999;
 }
-.footer .container-main .wrapper-footer .about-us {
+.footer .container .wrapper-footer .about-us {
   flex: 7;
   display: flex;
-  justify-content: space-between;
+  gap: 60px;
 }
-.footer .container-main .wrapper-footer .about-us .title-about-us {
+.footer .container .wrapper-footer .about-us .title-about-us {
   font-size: 24px;
   font-weight: 600;
   color: #9a9999;
   padding-bottom: 65px;
 }
-.footer .container-main .wrapper-footer .about-us ul li {
+.footer .container .wrapper-footer .about-us ul li {
   list-style-type: none;
   padding-bottom: 18px;
 }
-.footer .container-main .wrapper-footer .about-us ul li a {
+.footer .container .wrapper-footer .about-us ul li a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   color: black;
   transition: all ease-in-out 0.2s;
 }
-.footer .container-main .wrapper-footer .about-us ul li a:hover {
+.footer .container .wrapper-footer .about-us ul li a:hover {
   cursor: pointer;
   color: #545353;
 }
-.footer .container-main .wrapper-footer .about-us ul li input {
+.footer .container .wrapper-footer .about-us ul li input {
   border: none;
   outline: none;
   padding: 12px;
   border-bottom: 1px solid #ddd;
   margin-right: 10px;
 }
-.footer .container-main .wrapper-footer .about-us ul li button {
+.footer .container .wrapper-footer .about-us ul li button {
   border: none;
   outline: none;
   background: transparent;
@@ -587,24 +579,16 @@ input {
   text-transform: uppercase;
   transition: all ease-in-out 0.2s;
 }
-.footer .container-main .wrapper-footer .about-us ul li button:hover {
+.footer .container .wrapper-footer .about-us ul li button:hover {
   cursor: pointer;
   background: #ddd;
 } /*# sourceMappingURL=index.css.map */
 
-@media (min-width: 1200px) {
-  .our-products .list-our-product {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    padding-bottom: 48px;
-  }
-}
 @media (min-width: 865px) and (max-width: 1199px) {
   .header .container {
     padding: 0 20px;
   }
-  .our-products .container-main {
+  .our-products .container {
     padding: 0 80px;
   }
   .header .wrapper-header .nav ul li a {
@@ -633,6 +617,11 @@ input {
   .banner .content-banner .btn-buy-now {
     padding: 12px 18px;
     font-size: 13px;
+  }
+
+  .rooms .content-room .list-room .item-room .img {
+    height: 320px;
+    width: 100%;
   }
   .our-products .list-our-product {
     grid-template-columns: repeat(3, 1fr);
@@ -667,29 +656,29 @@ input {
   .footer {
     margin-top: 32px;
   }
-  .footer .container-main .wrapper-footer {
+  .footer .container .wrapper-footer {
     gap: 20px;
   }
 
-  .footer .container-main .wrapper-footer .info-company .name-company {
+  .footer .container .wrapper-footer .info-company .name-company {
     font-size: 32px;
   }
-  .footer .container-main .wrapper-footer .info-company .address {
+  .footer .container .wrapper-footer .info-company .address {
     font-size: 16px;
   }
-  .footer .container-main .wrapper-footer .info-company .sub-address {
+  .footer .container .wrapper-footer .info-company .sub-address {
     font-size: 16px;
   }
-  .footer .container-main .wrapper-footer .about-us {
+  .footer .container .wrapper-footer .about-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-  .footer .container-main .wrapper-footer .about-us .title-about-us {
+  .footer .container .wrapper-footer .about-us .title-about-us {
     font-size: 20px;
     padding-bottom: 20px;
   }
 
-  .footer .container-main .wrapper-footer .about-us ul li a {
+  .footer .container .wrapper-footer .about-us ul li a {
     font-size: 16px;
   }
 }
@@ -726,11 +715,26 @@ input {
     padding: 12px 18px;
     font-size: 13px;
   }
-  .our-products .container-main {
+  .rooms .content-room {
+    width: 100%;
+  }
+  .rooms .content-room .list-room {
+    padding: 0 60px;
+    width: 100%;
+  }
+  .rooms .content-room .list-room .item-room .img {
+    height: 320px;
+    width: 100%;
+  }
+  .our-products .container {
     padding: 0 60px;
   }
   .our-products .list-our-product {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-img-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 60px;
   }
   .slide-product .wrapper-slide .content-slide {
     padding-left: 60px;
@@ -762,32 +766,32 @@ input {
   .footer {
     margin-top: 32px;
   }
-  .footer .container-main {
+  .footer .container {
     padding: 0 60px;
   }
-  .footer .container-main .wrapper-footer {
+  .footer .container .wrapper-footer {
     gap: 20px;
   }
 
-  .footer .container-main .wrapper-footer .info-company .name-company {
+  .footer .container .wrapper-footer .info-company .name-company {
     font-size: 32px;
   }
-  .footer .container-main .wrapper-footer .info-company .address {
+  .footer .container .wrapper-footer .info-company .address {
     font-size: 16px;
   }
-  .footer .container-main .wrapper-footer .info-company .sub-address {
+  .footer .container .wrapper-footer .info-company .sub-address {
     font-size: 16px;
   }
-  .footer .container-main .wrapper-footer .about-us {
+  .footer .container .wrapper-footer .about-us {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-  .footer .container-main .wrapper-footer .about-us .title-about-us {
+  .footer .container .wrapper-footer .about-us .title-about-us {
     font-size: 20px;
     padding-bottom: 20px;
   }
 
-  .footer .container-main .wrapper-footer .about-us ul li a {
+  .footer .container .wrapper-footer .about-us ul li a {
     font-size: 16px;
   }
 }
@@ -819,7 +823,7 @@ input {
     top: 0;
     left: -100%;
     height: 100%;
-    width: 70%;
+    width: 50%;
     background-color: #ddd;
     transition: left 0.3s ease;
     z-index: 2;
@@ -836,8 +840,9 @@ input {
     padding-top: 60px;
   }
 
-  .nav ul li {
-    margin: 30px 0;
+  .header .wrapper-header .nav ul li a {
+    display: block;
+    padding: 20px;
   }
 
   .account-wrapper {
@@ -866,6 +871,14 @@ input {
     font-size: 13px;
   }
 
+  .mySwiper1 {
+    display: block;
+  }
+  .mySwiper1 .swiper-slide img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
   .rooms .title-room {
     font-size: 20px;
   }
@@ -877,10 +890,13 @@ input {
     padding: 0 20px;
   }
   .rooms .content-room .list-room {
-    grid-template-columns: repeat(1, 1fr);
+    display: none;
+  }
+  .rooms .content-room .mySwiper1 {
+    display: block;
   }
 
-  .our-products .container-main {
+  .our-products .container {
     padding: 0 20px;
   }
   .our-products .list-our-product {
@@ -934,45 +950,170 @@ input {
     flex-direction: column;
   }
 
+  .grid-img-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 60px;
+  }
+
   .footer {
     margin-top: 32px;
   }
-  .footer .container-main {
+  .footer .container {
     padding: 0 10px;
   }
-  .footer .container-main .wrapper-footer {
+  .footer .container .wrapper-footer {
     flex-direction: column;
     gap: 20px;
   }
-  .footer .container-main .wrapper-footer .info-company {
+  .footer .container .wrapper-footer .info-company {
     flex: 1;
   }
-  .footer .container-main .wrapper-footer .info-company .name-company {
+  .footer .container .wrapper-footer .info-company .name-company {
     font-size: 32px;
     padding-bottom: 32px;
   }
-  .footer .container-main .wrapper-footer .info-company .address {
+  .footer .container .wrapper-footer .info-company .address {
     font-size: 18px;
     color: #9a9999;
   }
-  .footer .container-main .wrapper-footer .info-company .sub-address {
+  .footer .container .wrapper-footer .info-company .sub-address {
     font-size: 18px;
     color: #9a9999;
   }
-  .footer .container-main .wrapper-footer .about-us {
+  .footer .container .wrapper-footer .about-us {
     flex: 1;
     display: flex;
     justify-content: space-between;
   }
-  .footer .container-main .wrapper-footer .about-us .title-about-us {
+  .footer .container .wrapper-footer .about-us .title-about-us {
     font-size: 18px;
     padding-bottom: 24px;
   }
-  .footer .container-main .wrapper-footer .about-us ul li {
+  .footer .container .wrapper-footer .about-us ul li {
     list-style-type: none;
     padding-bottom: 18px;
   }
-  .footer .container-main .wrapper-footer .about-us ul li a {
+  .footer .container .wrapper-footer .about-us ul li a {
     font-size: 16px;
+  }
+  .our-products .list-our-product {
+    display: none;
+  }
+  .our-products .mySwiper2 {
+    display: block;
+  }
+
+  .our-products .mySwiper2 .item-product {
+    overflow: hidden;
+    background: #f2eeee;
+    position: relative;
+  }
+  .our-products .mySwiper2 .item-product:hover {
+    cursor: pointer;
+  }
+  .our-products .mySwiper2 .item-product:hover .overlay {
+    opacity: 1;
+    cursor: pointer;
+  }
+  .our-products .mySwiper2 .item-product .overlay {
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .our-products .mySwiper2 .item-product .overlay .btn-add {
+    padding: 14px 28px;
+    border-radius: 4px;
+    background: white;
+    font-size: 15px;
+    color: #f46b6b;
+    font-weight: 500;
+    margin-bottom: 32px;
+    transition: all ease-in-out 0.2s;
+  }
+  .our-products .mySwiper2 .item-product .overlay .btn-add:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+  .our-products .mySwiper2 .item-product .overlay .share-social {
+    display: flex;
+    gap: 12px;
+    color: white;
+  }
+  .our-products .mySwiper2 .item-product .overlay .share-social .item-social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .our-products .mySwiper2 .item-product .img-product {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 265px;
+  }
+  .our-products .mySwiper2 .item-product .img-product img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  .our-products .mySwiper2 .item-product .content-product {
+    padding: 16px 20px;
+    padding-bottom: 48px;
+  }
+  .our-products .mySwiper2 .item-product .content-product .name-product {
+    font-size: 24px;
+    font-weight: 600;
+    color: #545353;
+    padding-bottom: 8px;
+  }
+  .our-products .mySwiper2 .item-product .content-product .name-product:hover {
+    cursor: pointer;
+  }
+  .our-products .mySwiper2 .item-product .content-product .desc-prroduct {
+    font-size: 18px;
+    color: #9a9999;
+    padding-bottom: 8px;
+  }
+  .our-products .mySwiper2 .item-product .content-product .price {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .our-products .mySwiper2 .item-product .content-product .price .original {
+    text-decoration: line-through;
+    color: #9a9999;
+  }
+  .our-products .mySwiper2 .item-product .sale {
+    padding: 20px;
+    background: red;
+    color: white;
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+  }
+  .our-products .btn-show-more {
+    display: none;
   }
 }
